@@ -1,4 +1,5 @@
 import React from 'react';
+import Review from '../App/Review';
 import Typography from "@mui/material/Typography";
 import AppBar from '@mui/material/AppBar';
 import Link from '@mui/material/Link';
@@ -6,10 +7,10 @@ import Icon from '@mui/material/Icon';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 
-import FlightLandIcon from '@mui/icons-material/FlightLand';
+import MovieFilterIcon from '@mui/icons-material/MovieFilter';
 
 import { useNavigate } from 'react-router-dom';
-const Landing = () => {
+const MyPage = () => {
 const navigate = useNavigate();
 return (
 <>
@@ -17,10 +18,10 @@ return (
 <AppBar position="static">
 <Container maxWidth="xl">
 <Toolbar disableGutters>
-<FlightLandIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: 40 }} />
+<MovieFilterIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: 40 }} />
 
 <Typography variant="h4" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Landing Page
+My Page
 </Typography>
 
 
@@ -47,10 +48,10 @@ Review
 <Link
 color="inherit"
 style={{ cursor: "pointer" }}
-onClick={() => navigate('/MyPage')}
+onClick={() => navigate('/')}
 >
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-MyPage
+Landing
 </Typography>
 </Link>
 </Toolbar>
@@ -58,22 +59,12 @@ MyPage
 </AppBar>
 </div>
 <div>
-{/*add Search elements below */}
+{/*add MyPage elements below */}
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Landing Page Under Construction...
+My Page Under Construction...
 </Typography>
 </div>
 </>
 )
 }
-export default Landing;
-
-
-
-
-
-
-
-
-
-
+export default MyPage;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Review from '../App/Review';
 import Typography from "@mui/material/Typography";
 import AppBar from '@mui/material/AppBar';
 import Link from '@mui/material/Link';
@@ -6,10 +7,10 @@ import Icon from '@mui/material/Icon';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 
-import FlightLandIcon from '@mui/icons-material/FlightLand';
+import SearchIcon from '@mui/icons-material/Search';
 
 import { useNavigate } from 'react-router-dom';
-const Landing = () => {
+const Search = () => {
 const navigate = useNavigate();
 return (
 <>
@@ -17,20 +18,20 @@ return (
 <AppBar position="static">
 <Container maxWidth="xl">
 <Toolbar disableGutters>
-<FlightLandIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: 40 }} />
+<SearchIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: 40 }} />
 
 <Typography variant="h4" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Landing Page
+Search Page
 </Typography>
 
 
 <Link
 color="inherit"
 style={{ cursor: "pointer" }}
-onClick={() => navigate('/Search')}
+onClick={() => navigate('/')}
 >
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Search
+Landing
 </Typography>
 
 
@@ -60,20 +61,10 @@ MyPage
 <div>
 {/*add Search elements below */}
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Landing Page Under Construction...
+Search Page Under Construction...
 </Typography>
 </div>
 </>
 )
 }
-export default Landing;
-
-
-
-
-
-
-
-
-
-
+export default Search;

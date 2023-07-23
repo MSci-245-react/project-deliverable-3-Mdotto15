@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import ReviewTitle from './ReviewTitle';
-import ReviewBody from './ReviewBody';
-import ReviewRating from './ReviewRating';
+import ReviewBody from '../App/ReviewBody';
+import ReviewRating from '../App/ReviewRating';
 import MovieSelection from './MovieSelection';
 //import all necessary libraries here, e.g., Material-UI Typography, as follows
 import Typography from '@mui/material/Typography';
