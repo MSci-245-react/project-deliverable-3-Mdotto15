@@ -34,12 +34,53 @@ app.post('/api/loadUserSettings', (req, res) => {
 		}
 
 		let string = JSON.stringify(results);
-		//let obj = JSON.parse(string);
+		let obj = JSON.parse(string);
 		res.send({ express: string });
 	});
 	connection.end();
 });
 
+app.post('/api/getMovies', (req, res) => {
+
+
+	const connection = mysql.createConnection(config);
+
+	const sql = 'SELECT * FROM mdotto.movies';
+	connection.query(sql, (error, results, fields) => {
+		if (error) {
+			console.error(error.message);
+		} else {
+			let string = JSON.stringify(results);
+			res.send({ movies: results });
+			console.log(results);
+		}
+		connection.end();
+	});
+
+});
+
+  app.post('/api/addReview', (req, res) => {
+	const connection = mysql.createConnection(config);
+
+	let reviewID = Math.floor(Math.random() * 1000000) + 1;
+	const {movieID, userID, Title, Body, Rating } = req.body;
+	 
+	
+  
+	const sql = 'INSERT INTO mdotto.Review (reviewID, movieID, userID, reviewTitle, reviewContent, reviewScore) VALUES (?, ?, ?, ?, ?, ?)';
+	const values = [reviewID, movieID, userID, Title, Body, Rating];
+
+	connection.query(sql, values, (error, results, fields) => {
+		if (error) {
+		console.log(error.message);
+		
+		}else {
+			res.send('Success');
+			connection.end();
+  		}	
+	});
+  	});
+	
 
 
 app.listen(port, () => console.log(`Listening on port ${port}`)); //for the dev version

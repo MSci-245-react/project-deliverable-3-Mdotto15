@@ -7,8 +7,9 @@ const App = () => {
 
   return (
     <div>
-        <h1>MSci 245 - D1 template </h1>
+        {/*<h1>MSci 245 - D1 template </h1>
       {/* Render <Review /> child component */}
+      <Review/>
 
 
     </div>
