@@ -28,10 +28,10 @@ Review Page
 <Link
 color="inherit"
 style={{ cursor: "pointer" }}
-onClick={() => navigate('/Search')}
+onClick={() => navigate('/')}
 >
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Search
+Landing
 </Typography>
 
 
@@ -39,10 +39,10 @@ Search
 <Link
 color="inherit"
 style={{ cursor: "pointer" }}
-onClick={() => navigate('/')}
+onClick={() => navigate('/Search')}
 >
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Landing
+Search
 </Typography>
 </Link>
 <Link

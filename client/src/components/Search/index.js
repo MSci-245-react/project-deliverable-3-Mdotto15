@@ -1,5 +1,5 @@
 import React from 'react';
-import Review from '../App/Review';
+import SearchPage from './SearchPage';
 import Typography from "@mui/material/Typography";
 import AppBar from '@mui/material/AppBar';
 import Link from '@mui/material/Link';
@@ -60,9 +60,7 @@ MyPage
 </div>
 <div>
 {/*add Search elements below */}
-<Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Search Page Under Construction...
-</Typography>
+<SearchPage/>
 </div>
 </>
 )

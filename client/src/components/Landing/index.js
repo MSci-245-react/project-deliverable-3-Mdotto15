@@ -58,11 +58,26 @@ MyPage
 </AppBar>
 </div>
 <div>
-{/*add Search elements below */}
-<Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Landing Page Under Construction...
+<Typography variant="h3" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
+Welcome To Marc's Movie Review Site!
 </Typography>
 </div>
+<div ><iframe src="https://gifer.com/embed/8CPR" width = "30%"  ></iframe></div>
+<div>
+<Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
+Navigate through various pages in the app bar to:
+</Typography>
+<Typography variant="body1" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
+     -Write a review
+</Typography>
+<Typography variant="body1" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
+     -Search for movies
+</Typography>
+<Typography variant="body1" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
+     -Visit my custom page!
+</Typography>
+</div>
+<div><iframe src="https://gifer.com/embed/8V9H" ></iframe></div>
 </>
 )
 }
