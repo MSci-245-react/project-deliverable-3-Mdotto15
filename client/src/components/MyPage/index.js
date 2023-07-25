@@ -1,5 +1,5 @@
 import React from 'react';
-import Review from '../App/Review';
+import Trailers from './MyPage';
 import Typography from "@mui/material/Typography";
 import AppBar from '@mui/material/AppBar';
 import Link from '@mui/material/Link';
@@ -21,7 +21,7 @@ return (
 <MovieFilterIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: 40 }} />
 
 <Typography variant="h4" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-My Page
+Trailers
 </Typography>
 
 
@@ -59,10 +59,7 @@ Search
 </AppBar>
 </div>
 <div>
-{/*add MyPage elements below */}
-<Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-My Page Under Construction...
-</Typography>
+<Trailers/>
 </div>
 </>
 )

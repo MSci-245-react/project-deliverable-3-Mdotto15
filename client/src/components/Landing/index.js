@@ -50,7 +50,7 @@ style={{ cursor: "pointer" }}
 onClick={() => navigate('/MyPage')}
 >
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-MyPage
+Trailers
 </Typography>
 </Link>
 </Toolbar>

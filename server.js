@@ -130,25 +130,50 @@ app.post('/api/getMovies', (req, res) => {
 		}
 		connection.end();
 		});
-		
-	  
-		//try {
-		  // Execute the query using the connection pool
-		  //const [rows] = connection.query(sql, values, (error, results, fields));
-		  
-	  
-		  // Process the retrieved data and send it back to the frontend
-		  //const movies = rows.map((row) => ({
-			//title: row.title,
-			//director: `${row.director_first_name} ${row.director_last_name}`,
-		//}));
-		//res.json(rows);
-		//res.json(movies);
-		//res.send({ movies: results });
-	  //} catch (error) {
-		//console.error('Error while executing the search query:', error);
-	  //}
 	});
+
+		app.post('/api/getTrailers', (req, res) => {
+
+
+			const connection = mysql.createConnection(config);
+		
+			const sql = 'SELECT * from mdotto.movieTrailers;';
+			connection.query(sql, (error, results, fields) => {
+				if (error) {
+					console.error(error.message);
+				} else {
+					let string = JSON.stringify(results);
+					res.send(results);
+					console.log(results);
+				}
+				connection.end();
+			});
+		
+		});
+		
+
+		app.post('/api/sendSelection', (req, res) => {
+			const connection = mysql.createConnection(config);
+		
+			const {movieID} = req.body;
+			 
+			
+		  
+			const sql = 'SELECT trailerLink from mdotto.movieTrailers WHERE movieID = ?';
+			const values = [movieID];
+		
+			connection.query(sql, values, (error, results, fields) => {
+				if (error) {
+				console.log(error.message);
+				
+				}else {
+					res.send(results);
+					connection.end();
+				  }	
+			});
+			  });
+		
+	
 
 	  
 	
