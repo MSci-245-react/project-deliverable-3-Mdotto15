@@ -6,7 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const MovieSelection = ({movies, selectedMovie, handleSelectMovie, errorCheck}) => {
+const TitleSelection = ({trailerTitles, selectedMovie, handleSelectMovie, errorCheck}) => {
 
   
   //states declarations
@@ -22,17 +22,17 @@ const MovieSelection = ({movies, selectedMovie, handleSelectMovie, errorCheck}) 
     <FormControl sx={{ minWidth: 120 }} >
       <InputLabel>Movies</InputLabel>
       <Select label="Select Movie" sx={{ marginBottom: '10px' }} value = {selectedMovie} >
-      {movies?.movies.map((movie) => (
-          <MenuItem key={movie.id} value={movie.name} onClick={() => handleChangeMovie(movie.name, movie.id)}>
-            {movie.name}
+      {trailerTitles?.map((trailer) => (
+          <MenuItem key={trailer.trailerID} value={trailer.movieTitle} onClick={() => handleChangeMovie(trailer.movieTitle, trailer.movieID)}>
+            {trailer.movieTitle}
           </MenuItem>
         ))}
       </Select>
     </FormControl>
-    {errorCheck && <Typography style = {{color: "red"}} sx={{ marginBottom: '5px' }}>Select your movie</Typography>}
+    {errorCheck && <Typography style = {{color: "red"}} sx={{ marginBottom: '5px' }}>Select Movie to View Trailer!</Typography>}
 
     </>
   );
 }
 
-export default MovieSelection;
+export default TitleSelection;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Review from '../App/Review';
 import Typography from "@mui/material/Typography";
 import AppBar from '@mui/material/AppBar';
 import Link from '@mui/material/Link';
@@ -6,10 +7,10 @@ import Icon from '@mui/material/Icon';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 
-import FlightLandIcon from '@mui/icons-material/FlightLand';
+import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown';
 
 import { useNavigate } from 'react-router-dom';
-const Landing = () => {
+const ReviewPage = () => {
 const navigate = useNavigate();
 return (
 <>
@@ -17,20 +18,20 @@ return (
 <AppBar position="static">
 <Container maxWidth="xl">
 <Toolbar disableGutters>
-<FlightLandIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: 40 }} />
+<ThumbsUpDownIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, fontSize: 40 }} />
 
 <Typography variant="h4" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Landing Page
+Review Page
 </Typography>
 
 
 <Link
 color="inherit"
 style={{ cursor: "pointer" }}
-onClick={() => navigate('/Search')}
+onClick={() => navigate('/')}
 >
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Search
+Landing
 </Typography>
 
 
@@ -38,10 +39,10 @@ Search
 <Link
 color="inherit"
 style={{ cursor: "pointer" }}
-onClick={() => navigate('/Review')}
+onClick={() => navigate('/Search')}
 >
 <Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Review
+Search
 </Typography>
 </Link>
 <Link
@@ -58,30 +59,12 @@ Trailers
 </AppBar>
 </div>
 <div>
-<Typography variant="h3" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Welcome To Marc's Movie Review Site!
-</Typography>
+<Review/>
 </div>
-<div ><iframe src="https://gifer.com/embed/8CPR" width = "30%"  ></iframe></div>
-<div>
-<Typography variant="h5" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-Navigate through various pages in the app bar to:
-</Typography>
-<Typography variant="body1" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-     -Write a review
-</Typography>
-<Typography variant="body1" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-     -Search for movies
-</Typography>
-<Typography variant="body1" color="inherit" noWrap sx={{ marginRight: '1rem' }}>
-     -Visit my custom page!
-</Typography>
-</div>
-<div><iframe src="https://gifer.com/embed/8V9H" ></iframe></div>
 </>
 )
 }
-export default Landing;
+export default ReviewPage;
 
 
 
