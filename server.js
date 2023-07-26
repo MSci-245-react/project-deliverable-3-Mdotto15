@@ -168,10 +168,11 @@ app.post('/api/getMovies', (req, res) => {
 				
 				}else {
 					res.send(results);
-					connection.end();
+					
 				  }	
+				  connection.end();
 			});
-			  });
+		});
 		
 	
 
