@@ -92,11 +92,15 @@ const sendSelection = async (data) => {
     
     selectedMovie === '' ? setMovieSelectionError(true) : setMovieSelectionError(false)
     if(selectedMovie){
-      sendSelection(movieID);
-
+      sendSelection({movieID});
       setSubmitValue(true);
     }
   };
+
+  console.log(movieID);
+  console.log(trailerLink[0]);
+  let linkObj = trailerLink[0];
+
 
   return (
     <Grid
@@ -124,8 +128,10 @@ const sendSelection = async (data) => {
       {/*//Conditional Render based on all values being filled in */}
       {submitValue &&
       <>
-      <Typography sx={{ marginBottom: '10px' }} align="center">Trailer for {selectedMovie}:</Typography>
-      <Grid><iframe width = "500" height = "315" src={trailerLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></Grid>
+      <Typography variant = "h5" sx={{ marginBottom: '10px' }} >Trailer for {selectedMovie}:</Typography>
+      
+      <Grid><iframe width = "500" height = "315" src={trailerLink && trailerLink[0] ? trailerLink[0].trailerLink.replace(/^"(.*)"$/, '$1') : ''} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></Grid>
+      
       </>}
       
     </Grid>
